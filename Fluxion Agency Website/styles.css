@@ -1212,6 +1212,7 @@ img {
 
 @media (max-width: 880px) {
   .case { grid-template-columns: 1fr; }
+  .case-img-slot { min-height: 260px; height: 260px; }
 }
 
 .case:hover {
