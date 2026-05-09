@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>You're Booked · Fluxion</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=jetbrains-mono@400,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--navy);
+      text-align: center;
+      padding: 40px 24px;
+    }
+    .ty-wrap {
+      max-width: 640px;
+      width: 100%;
+      animation: fadeUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .ty-mark {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--accent-ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+      font-size: 36px;
+      font-weight: 700;
+      animation: pop 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s both;
+    }
+    @keyframes pop {
+      from { transform: scale(0.6); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+    .ty-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .ty-h1 {
+      font-size: clamp(40px, 7vw, 80px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+    .ty-sub {
+      font-size: clamp(16px, 1.4vw, 19px);
+      color: var(--ink-60);
+      line-height: 1.5;
+      max-width: 480px;
+      margin: 0 auto 48px;
+    }
+    .ty-steps {
+      background: var(--navy-2);
+      border: 1px solid var(--ink-12);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+    .ty-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--ink-12);
+    }
+    .ty-step:last-child { border-bottom: 0; }
+    .ty-step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--accent) 15%, transparent);
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .ty-step-body h4 {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .ty-step-body p {
+      font-size: 13px;
+      color: var(--ink-60);
+      line-height: 1.4;
+    }
+    .ty-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .ty-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: var(--accent-ink);
+      padding: 16px 26px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: transform 0.3s;
+    }
+    .ty-btn-primary:hover { transform: scale(1.02); }
+    .ty-btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--ink-08);
+      color: var(--white);
+      border: 1px solid var(--ink-12);
+      padding: 16px 26px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .ty-btn-ghost:hover { background: var(--ink-12); }
+    .ty-logo {
+      position: fixed;
+      top: 28px;
+      left: 32px;
+    }
+    .ty-logo img { height: 26px; }
+    .ty-wa {
+      margin-top: 48px;
+      font-size: 13px;
+      color: var(--ink-40);
+    }
+    .ty-wa a {
+      color: var(--ink-60);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .ty-wa a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="ty-logo">
+    <img src="assets/logo-white.png" alt="Fluxion" />
+  </a>
+  <div class="ty-wrap">
+    <div class="ty-mark">✓</div>
+    <div class="ty-eyebrow">You're all set</div>
+    <h1 class="ty-h1">Call booked.<br />Talk soon.</h1>
+    <p class="ty-sub">
+      Check your email for a calendar invite with the meeting link. We'll review your answers before the call so we can hit the ground running.
+    </p>
+    <div class="ty-steps">
+      <div class="ty-step">
+        <span class="ty-step-num">01</span>
+        <div class="ty-step-body">
+          <h4>Check your inbox</h4>
+          <p>A calendar invite is on its way with the meeting link and all the details.</p>
+        </div>
+      </div>
+      <div class="ty-step">
+        <span class="ty-step-num">02</span>
+        <div class="ty-step-body">
+          <h4>We'll review your answers</h4>
+          <p>We read every submission before the call so we can come prepared with real observations, not generic advice.</p>
+        </div>
+      </div>
+      <div class="ty-step">
+        <span class="ty-step-num">03</span>
+        <div class="ty-step-body">
+          <h4>Show up ready to move fast</h4>
+          <p>30 minutes is enough to identify your biggest ad system gaps and agree on a clear next step.</p>
+        </div>
+      </div>
+    </div>
+    <div class="ty-actions">
+      <a href="index.html" class="ty-btn-primary">← Back to home</a>
+      <a href="https://wa.me/2349014193481?text=Hi%20Fluxion%20%E2%80%94%20I%20just%20booked%20a%20call%20and%20have%20a%20quick%20question." class="ty-btn-ghost" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+    <p class="ty-wa">
+      Questions before the call? Reach us at
+      <a href="mailto:nowfluxion@gmail.com">nowfluxion@gmail.com</a>
+    </p>
+  </div>
+</body>
+</html>
