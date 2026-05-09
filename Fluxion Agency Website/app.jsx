@@ -626,7 +626,7 @@ function Cases() {
         <div className="cases">
           {cases.map((c, i) =>
           <Reveal key={i} delay={i * 80}>
-              <article className="case" style={{ height: "230.594px", width: "976px" }}>
+              <article className="case">
                 <image-slot
                 id={`case-img-${i}`}
                 shape="rect"
