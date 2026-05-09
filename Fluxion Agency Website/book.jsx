@@ -239,6 +239,15 @@ function App() {
   }
 
   function Section6() {
+        useEffect(() => {
+      const onMessage = (e) => {
+        if (e.data && e.data.event === 'calendly.event_scheduled') {
+          window.location.href = 'thankyou.html';
+        }
+      };
+      window.addEventListener('message', onMessage);
+      return () => window.removeEventListener('message', onMessage);
+    }, []);
     return (
       <div className="book-section">
         <Progress step={step} total={SECTIONS.length} />
